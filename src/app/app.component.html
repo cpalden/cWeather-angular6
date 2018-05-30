@@ -1,0 +1,65 @@
+<!-- Navigation header bar.-->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark ">  
+    <a class="navbar-brand" routerLink="/home">{{title}}</a>
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Navbar links -->
+    <div class ="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Right-side -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/forecast" routerLinkActive="active">5 Days</a>
+        </li>
+      </ul>
+      <!-- Left-side -->
+      <ul class="navbar-nav ml-auto">  
+        <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+        <a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a>
+        <a class="nav-link" style="cursor:pointer">Logout</a>
+      </ul>
+    </div>
+  </nav>
+<!-- renders the content of a particular component in the container class -->
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+<!-- page footer -->
+<div class="page-footer bg-dark center-on-small-only">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <header><a routerLink="/home" routerLinkActive="active">cWeather</a></header>
+      </div>
+      <div class="col-md-6">
+        <h5 class="title">Links</h5>
+        <ul>
+          <li><a routerLink="#">Link1</a></li>
+          <li><a routerLink="#">Link2</a></li>
+          <li><a routerLink="#">Link3</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="social-section text-center">
+    <ul>Follow:
+      <a routerLink="" routerLinkActive="active" class="btn-floating btn-sm btn-fb">
+        <i class="facebook icon-circle">f</i>
+      </a>
+      <a routerLink="" routerLinkActive="active" class="btn-floating btn-sm btn-tw">
+        <i class="twitter icon-circle">t</i>
+      </a>
+      <a routerLink="" routerLinkActive="active" class="btn-floating btn-sm btn-li">
+        <i class="linkedin icon-circle">In</i>
+      </a>
+    </ul>
+  </div>
+  <div class="footer-copyright text-center">
+      @ 2018 	Copyright: <a routerLink="/home" routerLinkActive="active">cWeather</a>
+  </div>
+</div>
+

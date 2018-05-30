@@ -1,0 +1,29 @@
+<!-- form vanishes on submission -->
+<div class="row pt-3 pb-3">
+  <div class="col-md-6">
+    <div [hidden]="submitted">
+      <h3>5 Days Weather Forecast</h3>
+      <form>
+        <div class="form-group ">
+          <input  type="text" name="location" placeholder="City name" [(ngModel)]="location" required>
+          <button class="btn btn-success" type="submit" (click)="onSubmit()">Search</button>
+        </div>
+      </form>
+    </div>
+    <div [hidden]="!submitted">
+      <h3>5 day/ 3 Hr Weather Forecast of {{fiveDaysData.city.name}}.</h3>
+      <div class="row">
+        <ul *ngFor= "let data of datas">
+          <li>Temp: {{data.main.temp}}<br>
+            max: {{data.main.temp_max}}, min: {{data.main.temp_min}}<br>
+            Humidity: {{data.main.humidity}}
+          </li>
+        </ul>
+      </div>
+    </div>  
+  </div>
+  <div class="col-md-6">
+      <agm-map *ngIf="!citySubmitted" [latitude] = "lat" [longitude] = "lng" [zoom]="12"></agm-map>
+      <agm-map *ngIf="citySubmitted" [latitude] = fiveDaysData.city.coord.lat [longitude] = fiveDaysData.city.coord.lon [zoom]="12"></agm-map>
+  </div>
+</div>
